@@ -6,7 +6,7 @@
 #include "C:/Users/YAGO/source/repos/projeto de jogo/Unico/NoDeSprite.h"
 #include "NoDeCena.h"
 #include "C:/Users/YAGO/source/repos/projeto de jogo/Aeronave.h"
-#include "IdRecursos.h"
+#include "RecID.h"
 
 #include <array>
 
@@ -14,7 +14,7 @@ class Mundo : private sf::NonCopyable
 {
 public:
 
-	//Definição de um tipo de recursador para lidar com as texturas da classe Mundo;
+	//DefiniÃ§Ã£o de um tipo de recursador para lidar com as texturas da classe Mundo;
 	typedef Recursador <sf::Texture, Texturas::ID> RecTex;
 
 	explicit Mundo(sf::RenderWindow& janela);
@@ -26,17 +26,17 @@ private:
 	{
 			Fundo,
 			Ar,
-			RotTotais //Rótulos Totais
+			RotTotais //RÃ³tulos Totais
 	};
 
-	//Lógica de renderização;
+	//LÃ³gica de renderizaÃ§Ã£o;
 	sf::RenderWindow& m_janela;
 	sf::View m_visaoMundo{};
 	RecTex m_texturas{};
 	NoDeCena m_cenaGraficos{};
 	std::array<NoDeCena*, RotTotais> m_rotCenas{};
 
-	//Lógica do mundo e ponteiro para o jogador;
+	//LÃ³gica do mundo e ponteiro para o jogador;
 	sf::FloatRect m_mundoBordas{};
 	sf::Vector2f m_posicaoSpawn{};
 	float m_velocidadeRolagem{};
